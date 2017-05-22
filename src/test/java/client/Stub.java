@@ -2,7 +2,7 @@ package client;
 import com.menkor.BinaryUtil;
 import com.alibaba.fastjson.JSON;
 /**
- * Created by xiaofengxu on 17/5/8.
+ * Created by zp on 17/5/8.
  */
 public class Stub {
     private String method;

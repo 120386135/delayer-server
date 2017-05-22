@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 import java.lang.reflect.Method;
 
 /**
- * Created by xiaofengxu on 17/5/18.
+ * Created by zp on 17/5/18.
  */
 public abstract class AbstractFutureSchedule {
     DelayService service = new DelayService();
@@ -22,12 +22,13 @@ public abstract class AbstractFutureSchedule {
 
     public abstract void start();
 
-    protected void handleNotify(Stub stub){
+    protected boolean handleNotify(Stub stub){
         try {
             Method method = DelayService.class.getDeclaredMethod(stub.getMethod(),String.class);
-            method.invoke(service,stub.getParam());
+            return (boolean)method.invoke(service,stub.getParam());
         } catch (Exception e) {
             logger.error(e.getMessage());
+            return false;
         }
     }
 }

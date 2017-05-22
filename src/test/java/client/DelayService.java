@@ -1,6 +1,6 @@
 package client;
 /**
- * Created by xiaofengxu on 17/5/8.
+ * Created by zp on 17/5/8.
  */
 public class DelayService {
     private static AbstractFutureSchedule schedule;
@@ -14,9 +14,10 @@ public class DelayService {
         return schedule.register(futureTime,Stub.toBytes("delayAnnouncement", String.valueOf(id)));
     }
 
-    public void delayAnnouncement(String idStr){
+    public boolean delayAnnouncement(String idStr){
         long id = Long.parseLong(idStr);
         System.out.println("test announcement " +idStr);
+        return true;
     }
 
 }

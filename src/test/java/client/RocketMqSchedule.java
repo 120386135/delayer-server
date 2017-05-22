@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 
 /**
- * Created by xiaofengxu on 17/5/18.
+ * Created by zp on 17/5/18.
  */
 public class RocketMqSchedule extends AbstractFutureSchedule{
     private static final Logger logger = LoggerFactory.getLogger(RocketMqSchedule.class);
